@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .animation-container{
+            width: 200px;
+            height: 400px;
+            margin-left: 50%;
+            left: -100px;
+            border: solid 2px red;
+            position: relative;
+        }
+        .animation-container > span{
+            position: absolute;
+            left: -200px;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .animation-container:hover > span{
+            animation: run 1s ease-in-out;
+        }
+        @keyframes run{
+            0%{
+                left: 0px;
+            }
+            100%{
+                left: 200px;
+            }
+        }
+        #animation-container:hover > span:nth-child(1){
+            left: 0px;
+            animation: none;
+            transition: left 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="animation-container" id="animation-container">
+            <span style="border: solid 1px blue;width: 205px">1</span>
+            <span style="border: solid 1px green;width: 210px">2</span>
+            <span style="border: solid 1px yellow;width: 215px">3</span>
+            <span style="border: solid 1px black;width: 230px">4</span>
+        </div>
+    </section>
+    
+</body>
+</html>
